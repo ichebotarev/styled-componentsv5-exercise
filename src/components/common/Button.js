@@ -13,7 +13,7 @@ width: 100%;
 display: block;
 white-space: none;
 
-&::disabled{
+&:disabled{
     background: #eee;
     color: #666;
 }
