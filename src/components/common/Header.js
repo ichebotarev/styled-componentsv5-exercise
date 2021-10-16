@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link as RRDomLink } from "react-router-dom";
+import { Link as RRDomLink, useLocation } from "react-router-dom";
 //workaround^for custom attributes
 
 const HeaderWrapper = styled.header`
@@ -29,12 +29,12 @@ const Menu = styled.nav`
 // 	border-top: solid 5px black;
 // `;
 
-//
+//destructuring isActive from Link comp and its not passing down to RRDOMLink, attribute never set so no error
 const Link = ({ isActive, children, ...props }) => {
 	return <RRDomLink {...props}>{children}</RRDomLink>;
 };
 
-//Styled React Component
+//Styled React Component (overriding link)
 const StyledLink = styled(Link)`
 	padding: 4px 8px;
 	display: block;
@@ -46,11 +46,14 @@ const StyledLink = styled(Link)`
 `;
 
 const Header = () => {
+	const { pathname } = useLocation();
 	return (
 		<HeaderWrapper>
 			<Menu>
-				<StyledLink to="/">Home</StyledLink>
-				<StyledLink to="/login" isActive>
+				<StyledLink to="/" isActive={pathname === "/"}>
+					Home
+				</StyledLink>
+				<StyledLink to="/login" isActive={pathname === "/login"}>
 					Login
 				</StyledLink>
 			</Menu>
