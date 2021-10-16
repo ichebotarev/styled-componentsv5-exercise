@@ -12,8 +12,8 @@ body{
   min-height: 100vh;
   margin: 0;
   color: black;
-  font-family: fot-chiaro-std, sans-serif;
-  font-weight: 400;
+  font-family: ibm-plex-sans-jp, sans-serif;
+
   font-style: normal;
 }
 `;
