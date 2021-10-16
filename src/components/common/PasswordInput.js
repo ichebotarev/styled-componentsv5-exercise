@@ -37,7 +37,9 @@ const PasswordInput = (props) => {
 		<>
 			<PasswordInputWrapper>
 				<PasswordInputStyled {...props} />
-				<ToggleButton>{showPassword ? "Hide" : "Show"}</ToggleButton>
+				<ToggleButton onClick={() => setShowPassword((s) => !s)}>
+					{showPassword ? "Hide" : "Show"}
+				</ToggleButton>
 			</PasswordInputWrapper>
 			<div>{showPassword ? props.value : ""}</div>
 		</>

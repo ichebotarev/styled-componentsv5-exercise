@@ -1,4 +1,4 @@
-import { Input } from "components/common";
+import { Input, Spinner } from "components/common";
 import PasswordInput from "components/common/PasswordInput";
 import Button from "components/common/Button";
 import PageLayout from "components/common/PageLayout";
@@ -52,22 +52,27 @@ const Login = () => {
 		<PageLayout>
 			<h1>Login</h1>
 			<Form onSubmit={handleSubmit}>
-				<Input
-					value={formFields.username}
-					name="username"
-					type="text"
-					placeholder="Username"
-					onChange={handleInputChange}
-				></Input>
-				<PasswordInput
-					value={formFields.password}
-					name="password"
-					onChange={handleInputChange}
-				></PasswordInput>
+				{loading ? (
+					<Spinner />
+				) : (
+					<>
+						<Input
+							value={formFields.username}
+							name="username"
+							type="text"
+							placeholder="Username"
+							onChange={handleInputChange}
+						></Input>
+						<PasswordInput
+							value={formFields.password}
+							name="password"
+							onChange={handleInputChange}
+						></PasswordInput>
+					</>
+				)}
 				<Button secondary large type="submit" disabled={loading}>
 					{loading ? "Loading" : "Login"}
 				</Button>
-
 				{!loading && (
 					<>
 						<div className="alt-text">or</div>
