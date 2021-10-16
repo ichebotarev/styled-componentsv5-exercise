@@ -23,6 +23,7 @@ const App = () => {
 			<Button>Primary</Button>
 			<Button secondary>Secondary</Button>
 			<Button disabled>Disabled</Button>
+			<Button large>Large</Button>
 		</>
 	);
 };
