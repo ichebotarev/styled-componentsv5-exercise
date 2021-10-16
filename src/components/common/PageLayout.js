@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Header from './Header'
 
 //all page content is rendered within, going to be rendered under header
 const Content = styled.main`
@@ -19,8 +20,9 @@ h1, h2, h3, h4, h5, h6{
 const PageLayout = ({children}) => {
     return (
         <>
+        <Header/>
         <Content>
-            {children} //pagecontent
+            {children}
         </Content>
             
         </>
