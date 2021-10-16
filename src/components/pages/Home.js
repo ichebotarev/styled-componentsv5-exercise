@@ -1,12 +1,12 @@
-import PageLayout from 'components/common/PageLayout'
-import React from 'react'
+import PageLayout from "components/common/PageLayout";
+import React from "react";
 
 const Home = () => {
-    return (
-        <PageLayout>
-            Home
-        </PageLayout>
-    )
-}
+	return (
+		<PageLayout>
+			<h1>Home</h1>
+		</PageLayout>
+	);
+};
 
-export default Home
+export default Home;

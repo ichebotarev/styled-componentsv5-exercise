@@ -15,7 +15,7 @@ const HeaderWrapper = styled.header`
 	border-bottom: 3px solid #fdd54f;
 `;
 const Menu = styled.nav`
-	display: block;
+	display: ${(p) => (p.open ? "block" : "none")};
 	position: absolute;
 	width: 100%;
 	top: 60px;
@@ -72,6 +72,10 @@ const MobileMenuIcon = styled.div`
 		margin: 5px 0;
 		width: 100%;
 	}
+
+	@media (min-width: 768px) {
+		display: none;
+	}
 `;
 
 const Header = () => {
@@ -79,12 +83,12 @@ const Header = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
 	return (
 		<HeaderWrapper>
-			<MobileMenuIcon>
+			<MobileMenuIcon onClick={() => setMenuOpen((s) => !s)}>
 				<div />
 				<div />
 				<div />
 			</MobileMenuIcon>
-			<Menu>
+			<Menu open={menuOpen}>
 				<StyledLink to="/" isActive={pathname === "/"}>
 					Home
 				</StyledLink>
