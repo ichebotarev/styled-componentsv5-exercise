@@ -22,7 +22,7 @@ const Menu = styled.nav`
 	left: 0%;
 	padding: 8px;
 	box-sizing: border-box;
-	border-bottom: 3px solid #fdd54f;
+	border-bottom: 3px solid ${p => p.theme.secondaryColor}; //variable from theme provider, secondary color injected as props
 	background: white;
 
 	@media (min-width: 768px) {
